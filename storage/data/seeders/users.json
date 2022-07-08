@@ -1,0 +1,9 @@
+{
+    "data": [
+        {
+            "name": "Admin User",
+            "email": "admin@test.com",
+            "password": "admin@123"
+        }
+    ]
+}
