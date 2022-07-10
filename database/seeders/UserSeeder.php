@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,14 +20,18 @@ class UserSeeder extends Seeder
         $usersJson = file_get_contents(Storage::path('../data/seeders/users.json'));
         $users = json_decode($usersJson, true)['data'];
 
-        DB::table('users')->delete();
+        DB::table('users')->truncate();
 
         foreach ($users as $user) {
-            DB::table('users')->insertOrIgnore([
+            User::create([
                 'name' => $user['name'],
                 'email' => $user['email'],
-                'password' => Hash::make($user['password']),
+                'password' => $user['password'],
+                'phone' => $user['phone'],
+                'status' => $user['status'],
             ]);
         }
+
+        User::factory(50)->create();
     }
 }
