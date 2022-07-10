@@ -3,7 +3,9 @@
         {
             "name": "Admin User",
             "email": "admin@test.com",
-            "password": "admin@123"
+            "password": "admin@123",
+            "phone": "750 083 9302",
+            "status": "1"
         }
     ]
 }

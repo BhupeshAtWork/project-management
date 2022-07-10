@@ -15,6 +15,9 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            @include('sweetalert::alert')
+
+
             @include('layouts.navigation')
 
             <!-- Page Heading -->
